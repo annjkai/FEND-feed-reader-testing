@@ -46,7 +46,10 @@ $(function() {
     });
 
     /* This suite tests the hamburger menu's toggle functionality (hidden
-     * by default, visible on click, hidden on next click) */
+     * by default, visible on click, hidden on next click)
+     * I used the following stackoverflow as reference: 
+     * https://stackoverflow.com/questions/29662744/testing-dom-elements-with-jasmine
+     */
 
     describe('The Menu', function() {
 
