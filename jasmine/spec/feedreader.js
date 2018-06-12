@@ -97,7 +97,8 @@ $(function() {
 
         //checks to make sure that the feed contains at least one entry and is //thus not 0
         it('contains at least one entry element', function() {
-            expect($('article').length).not.toBe(0);
+            //corrected the error thanks to reviewer reference //https://www.w3schools.com/jquery/sel_parent_descendant.asp
+            expect($('.feed .entry').length).not.toBe(0);
         })
     });
 
