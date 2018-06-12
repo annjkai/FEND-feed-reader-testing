@@ -25,29 +25,32 @@ $(function() {
         /* This test loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
+         * I originally used a plain for loop here but thought that was
+         * a bit messy, so thanks to a hint from Alain Cadenat in the
+         * GoogleDevND Slack for a hint on how to refactor this.
          */
-        it('have a defined URL', function() {
-            for (var x = 0; x < allFeeds.length; x++) {
-                expect(allFeeds[x].url).toBeDefined();
-                expect(allFeeds[x].url.length).not.toBe(0);
-            };
+        it('have a defined URL that is not empty', function() {
+            allFeeds.forEach(function(feed) {
+                expect(feed.url).toBeDefined();
+                expect(feed.url.length).not.toBe(0);
+            });
         });
 
         /* This test loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-        it('have a defined name', function() {
-            for (var x = 0; x < allFeeds.length; x++) {
-                expect(allFeeds[x].name).toBeDefined();
-                expect(allFeeds[x].name.length).not.toBe(0);
-            };
+        it('have a defined name that is not empty', function() {
+            allFeeds.forEach(function(feed) {
+                expect(feed.name).toBeDefined();
+                expect(feed.name.length).not.toBe(0);
+            });
         });
     });
 
     /* This suite tests the hamburger menu's toggle functionality (hidden
      * by default, visible on click, hidden on next click)
-     * I used the following stackoverflow as reference: 
+     * I used the following stackoverflow as reference:
      * https://stackoverflow.com/questions/29662744/testing-dom-elements-with-jasmine
      */
 
@@ -64,6 +67,7 @@ $(function() {
          * visibility when the menu icon is clicked.
          * The expectations are that the menu will display when
          * clicked and will hide when clicked again.
+         * Reference: https://api.jquery.com/click/
          */
         it('is visible when hidden and then clicked', function() {
             $('.menu-icon-link').click();
@@ -84,7 +88,7 @@ $(function() {
 
         /* This test ensures that when the loadFeed
          * function is called and completes its work, there is at least
-         * a single .entry element within the .feed container.
+         * a single 'article' element in the feed.
          */
         beforeEach(function(done) {
             //load the first feed, async method
@@ -93,7 +97,7 @@ $(function() {
 
         //checks to make sure that the feed contains at least one entry and is //thus not 0
         it('contains at least one entry element', function() {
-            expect($('.feed .entry').length).not.toBe(0);
+            expect($('article').length).not.toBe(0);
         })
     });
 
