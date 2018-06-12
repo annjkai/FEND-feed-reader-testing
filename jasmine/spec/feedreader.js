@@ -26,7 +26,7 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          * I originally used a plain for loop here but thought that was
-         * a bit messy, so thanks to a hint from Alain Cadenat in the
+         * a bit messy, so thanks to Alain Cadenat in the
          * GoogleDevND Slack for a hint on how to refactor this.
          */
         it('have a defined URL that is not empty', function() {
