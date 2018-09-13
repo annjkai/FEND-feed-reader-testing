@@ -1,6 +1,7 @@
 # Project Overview
 
-For this project, I was given a web-based application that reads RSS feeds. [Jasmine](http://jasmine.github.io/) was already included, as was the start of the first tests. My task was to complete the project by implementing the requirements given below.
+**Project acceptance date: 12 June 2018**
+For this project, I was given a web-based application that reads RSS feeds. [Jasmine](http://jasmine.github.io/) was already included, as was the starter code for the first tests. My task was to complete the project by implementing the requirements given below.
 
 # How to run the application
 
